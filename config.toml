@@ -1,188 +1,47 @@
 baseURL = "https://3dprintship.com/"
 languageCode = "en-us"
 title = "3D Print Ship"
-theme = "printwire"
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
-tagline       = "Marine-grade 3D printing for ship components, offshore hardware, and maritime spare parts — print and ship globally."
-description   = "3D Print Ship covers additive manufacturing for the maritime and shipping industry — from Inconel marine fittings to polymer deck hardware and rapid spare parts for vessels worldwide."
-keywords      = "marine 3D printing, ship spare parts AM, offshore 3D print, maritime additive manufacturing, vessel spare parts printing"
-logoEmoji     = "🚢"
+siteName      = "3D Print Ship"
+logoHtml      = '3D&nbsp;PRINT&nbsp;<span class="ed-logo-accent">SHIP</span>'
+tagline       = "Additive manufacturing for photovoltaics and solar hardware."
+description   = "3D Print Solar — additive manufacturing for photovoltaics and solar hardware, covering printed cell components, mounting and racking, trackers, enclosures, and a directory connecting installers to suppliers."
+keywords      = "3D printed solar, photovoltaic additive manufacturing, printed solar mounting, solar tracker parts, PV enclosures, solar racking, printed solar components"
+logoEmoji     = "☀"
 contactEmail  = "maxdavisgroup@gmail.com"
-footerServicesLabel = "Services"
-
-colorPrimary      = "#10b981"
-colorPrimaryDark  = "#059669"
-colorPrimaryLight = "#34d399"
-colorBgDark       = "#040a07"
-colorBgSection    = "#060e0a"
-colorBgCard       = "#09130d"
-colorBgCardHover  = "#0d1a12"
-
-fontPrimary   = "Inter"
-fontSecondary = "Source+Sans+3"
-
-newsFallbackImages = ["https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"]
-
-heroEyebrow  = "Maritime Additive Manufacturing"
-heroTitle    = "3D Print <em>Ship</em>"
-heroSubtitle = "Marine-grade 3D printing for ship components, offshore hardware, and maritime spare parts — print and ship globally."
-heroCta1Text = "Explore Services"
-heroCta1URL  = "/services/"
-heroCta2Text = "Get a Quote"
-heroCta2URL  = "/contact/"
-heroImage    = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"
-
-overviewTitle   = "Marine Parts On Demand"
-overviewText    = "Replace obsolete ship components in days, not months. Duplex stainless, Inconel, and marine-grade polymer parts printed to class society specifications."
-overviewBtnText = "View Services"
-overviewBtnURL  = "/services/"
-
-applicationsTitle = "Industries We Serve"
-servicesTitle    = "3D Print Ship Services"
-servicesSubtitle = "Marine-grade 3D printing for ship components, offshore hardware, and maritime spare parts — print and ship globally."
-clusterTitle = "Related 3D Printing Resources"
-newsletterTitle = "Industry Updates to Your Inbox"
-newsletterText  = "Research breakthroughs and industry news — delivered monthly."
-ctaTitle   = "Start Your Project"
-ctaText    = "Marine-grade 3D printing for ship components, offshore hardware, and maritime spare parts — print and ship globally."
-ctaBtnText = "Get in Touch"
-ctaBtnURL  = "/contact/"
-
-[[params.stats]]
-count  = 5
-suffix = "days"
-label  = "Avg Lead Time (Marine Parts)"
-
-[[params.stats]]
-count  = 99
-suffix = "%"
-label  = "Density (Marine DMLS)"
-
-[[params.stats]]
-count  = 12
-suffix = "+"
-label  = "Marine Alloys"
-
-[[params.stats]]
-count  = 60
-suffix = "%"
-label  = "Cost vs Emergency Machined Parts"
-
-
-[[params.applications]]
-title       = "Vessel Spare Parts"
-description = "Reverse-engineered obsolete parts — pump housings, valve bodies, impellers — printed and shipped worldwide."
-image       = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"
-
-[[params.applications]]
-title       = "Offshore Hardware"
-description = "Duplex stainless and Inconel components for subsea and offshore platform applications."
-image       = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"
-
-[[params.applications]]
-title       = "Deck & Interior Components"
-description = "Marine-grade polymer hardware, deck fittings, and interior trim components."
-image       = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"
-
-[[params.applications]]
-title       = "Propulsion Components"
-description = "Propeller nozzles, shaft housings, and drive train components in high-strength alloys."
-image       = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1920&q=80"
-
-
-[[params.servicesPreview]]
-icon        = "🚢"
-title       = "Marine Spare Parts"
-description = "Rapid reverse-engineering and DMLS printing of obsolete marine parts — 316L, duplex, and Inconel."
-
-[[params.servicesPreview]]
-icon        = "⚙️"
-title       = "Offshore Components"
-description = "Subsea and offshore fittings in duplex 2205 and Inconel 625 — pressure-rated and tested."
-
-[[params.servicesPreview]]
-icon        = "◎"
-title       = "Marine Polymer Parts"
-description = "PEEK, nylon, and marine-grade polymer deck hardware, fairleads, and interior components."
-
-[[params.servicesPreview]]
-icon        = "📦"
-title       = "Global Shipping"
-description = "Parts printed and air-freighted to any port worldwide — DHL, FedEx, and specialist marine logistics."
-
-
-[[params.services]]
-name        = "Marine Spare Parts"
-description        = "Rapid reverse-engineering and DMLS printing of obsolete marine parts — 316L, duplex, and Inconel."
-icon        = "🚢"
-image        = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=800&q=80"
-
-[[params.services]]
-name        = "Offshore Components"
-description        = "Subsea and offshore fittings in duplex 2205 and Inconel 625 — pressure-rated and tested."
-icon        = "⚙️"
-image        = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=800&q=80"
-
-[[params.services]]
-name        = "Marine Polymer Parts"
-description        = "PEEK, nylon, and marine-grade polymer deck hardware, fairleads, and interior components."
-icon        = "◎"
-image        = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=800&q=80"
-
-[[params.services]]
-name        = "Global Shipping"
-description        = "Parts printed and air-freighted to any port worldwide — DHL, FedEx, and specialist marine logistics."
-icon        = "📦"
-image        = "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=800&q=80"
-
-
-[[params.clusterLinks]]
-name        = "sendcutship.com"
-url         = "https://sendcutship.com"
-description = "Custom manufacturing flagship"
-
-[[params.clusterLinks]]
-name        = "dmls3d.com"
-url         = "https://dmls3d.com"
-description = "Metal 3D printing"
-
-[[params.clusterLinks]]
-name        = "3dprintmetal.com"
-url         = "https://3dprintmetal.com"
-description = "Metal 3D printing"
-
-[[params.clusterLinks]]
-name        = "metalpowder.co"
-url         = "https://metalpowder.co"
-description = "Metal powder for AM"
+ogImage       = "/images/s02_panel.png"
+footerServicesLabel = "Suppliers"
 
 [[menu.main]]
 name = "Home"
-url  = "/"
+url = "/"
 weight = 1
 [[menu.main]]
 name = "About"
-url  = "/about/"
+url = "/about/"
 weight = 2
 [[menu.main]]
 name = "Articles"
-url  = "/articles/"
+url = "/articles/"
 weight = 3
 [[menu.main]]
 name = "Services"
-url  = "/services/"
+url = "/services/"
 weight = 4
 [[menu.main]]
 name = "Contact"
-url  = "/contact/"
+url = "/contact/"
 weight = 5
 [[menu.main]]
 name = "Advertise"
-url  = "/advertise/"
+url = "/advertise/"
 weight = 6
-
-[[menu.main]]
-name   = "3D Viewer"
-url    = "/viewer.html"
-weight = 99

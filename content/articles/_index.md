@@ -1,4 +1,4 @@
 ---
-title: "3D Print Ship — Research & Industry News"
-description: "Technical articles and industry news for marine and shipping 3D printing services professionals."
+title: "Solar Manufacturing Insights"
+description: "Technical guides on 3D printing for solar energy systems, PV mounting, and concentrated solar power."
 ---
