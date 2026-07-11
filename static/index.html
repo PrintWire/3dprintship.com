@@ -94,36 +94,10 @@
 
     <div class="ed-section-label">
       Analysis &amp; Deep Dives
-      <a href="#">View All &rarr;</a>
+      <a href="/articles/">View All &rarr;</a>
     </div>
-    <div class="ed-list">
-      <article class="ed-list-item">
-        <img src="images/sh02_propeller.png" alt="Wire-arc printed propeller">
-        <div>
-          <span class="ed-badge">Propulsion</span>
-          <div class="ed-card-meta">July 1, 2026 · 10 min read</div>
-          <h3><a href="#">Wire-Arc Printed Propellers Pass DNV Class Approval</a></h3>
-          <p class="ed-card-excerpt">Full-size nickel-aluminium-bronze propellers produced in 48 hours via WAAM clear class-society testing — a milestone for printed marine propulsion at scale.</p>
-        </div>
-      </article>
-      <article class="ed-list-item">
-        <img src="images/sh08_onboard_printer.png" alt="Onboard digital inventory">
-        <div>
-          <span class="ed-badge">Digital Inventory</span>
-          <div class="ed-card-meta">June 28, 2026 · 8 min read</div>
-          <h3><a href="#">Container Ship Digital Twin: How Maersk Uses AM for Predictive Maintenance</a></h3>
-          <p class="ed-card-excerpt">Digital inventory plus onboard printers mean zero-downtime spare parts at sea, with the digital twin flagging what to print before a part fails.</p>
-        </div>
-      </article>
-      <article class="ed-list-item">
-        <img src="images/sh09_offshore.png" alt="Offshore printed bracket">
-        <div>
-          <span class="ed-badge">Offshore</span>
-          <div class="ed-card-meta">June 24, 2026 · 7 min read</div>
-          <h3><a href="#">Offshore Platforms Print Corrosion-Resistant Spares On Site</a></h3>
-          <p class="ed-card-excerpt">Rigs far from port are qualifying printed valves, brackets, and pump housings in duplex stainless — cutting weeks of boat-and-helicopter logistics.</p>
-        </div>
-      </article>
+    <div class="ed-list" id="pwDeepDives">
+      <div style="padding:1.5rem;color:var(--text-faint);">Loading analysis…</div>
     </div>
 
     <div class="ed-section-label">
@@ -433,6 +407,31 @@ document.querySelector('.ed-nav-toggle')?.addEventListener('click', () => {
       ? top.map(card).join('')
       : '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text-faint);">Unable to load news.</div>';
   }
+})();
+
+// -- Analysis & Deep Dives: PrintWire catalog in list format --
+(function(){
+  var box = document.getElementById('pwDeepDives');
+  if (!box) return;
+  function esc(s){var d=document.createElement('div');d.appendChild(document.createTextNode(s==null?'':s));return d.innerHTML;}
+  var empty = '<div style="padding:1.5rem;color:var(--text-faint);">In-depth analysis and deep dives are on the way — check back soon.</div>';
+  fetch('network.json',{cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : []; })
+    .then(function(items){
+      items = (items || []).slice();
+      items.sort(function(a,b){ return (b.iso||'').localeCompare(a.iso||''); });
+      if (!items.length){ box.innerHTML = empty; return; }
+      box.innerHTML = items.slice(0,8).map(function(a){
+        var img = a.img ? '<img src="'+esc(a.img)+'" alt="" loading="lazy">' : '';
+        var meta = esc(a.date||'') + (a.origin ? ' · '+esc(a.origin) : '');
+        return '<article class="ed-list-item">'+img+'<div>'+
+          '<div class="ed-card-meta">'+meta+'</div>'+
+          '<h3><a href="'+esc(a.url)+'">'+esc(a.title)+'</a></h3>'+
+          '<p class="ed-card-excerpt">'+esc(a.summary||'')+'</p>'+
+          '</div></article>';
+      }).join('');
+    })
+    .catch(function(){ box.innerHTML = empty; });
 })();
 </script>
 </body>
